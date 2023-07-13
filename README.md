@@ -31,4 +31,4 @@ $ npm run test
 
 ## License
 
-Nest is [MIT licensed](LICENSE).
+`NodeJs Service Template` is [MIT licensed](LICENSE).
