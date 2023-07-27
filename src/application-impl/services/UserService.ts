@@ -6,14 +6,15 @@ import { type IUserService } from "src/application/services/IUserService";
 import { Inject } from "@nestjs/common";
 import type { Result } from "src/domain/value-objects/Result";
 import { User } from "src/domain/models/User";
+import { IName } from "src/constants/IName";
 
 export class UserService implements IUserService {
   private readonly idGen_: IIdGenerator;
   private readonly userRepository_: IUserRepository;
 
   constructor(
-    @Inject("IIdGenerator") idGen: IIdGenerator,
-    @Inject("IUserRepository") userRepository: IUserRepository
+    @Inject(IName.IIdGenerator) idGen: IIdGenerator,
+    @Inject(IName.IUserRepository) userRepository: IUserRepository
   ) {
     this.idGen_ = idGen;
     this.userRepository_ = userRepository;

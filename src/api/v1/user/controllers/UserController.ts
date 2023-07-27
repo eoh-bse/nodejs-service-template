@@ -13,12 +13,13 @@ import { IUserService } from "src/application/services/IUserService";
 import { PostUserRequest } from "../request-models/PostUserRequest";
 import type { UserResponseModel } from "../response-models/UserResponseModel";
 import userMapper from "../mappers/user-mapper";
+import { IName } from "src/constants/IName";
 
 @Controller("api/user/v1")
 export class UserController {
   private readonly userService_: IUserService;
 
-  constructor(@Inject("IUserService") userService: IUserService) {
+  constructor(@Inject(IName.IUserService) userService: IUserService) {
     this.userService_ = userService;
   }
 
